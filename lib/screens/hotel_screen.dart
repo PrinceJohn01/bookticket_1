@@ -35,20 +35,20 @@ class HotelScreen extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Styles.primaryColor,
-              image: const DecorationImage(
+              image:  DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  "assets/images/one.png"
+                  "assets/images/${hotel['image']}"
                 )
               )
             ),
           ),
           const Gap(10),
-          Text("Open Space",style: Styles.headLineStyle2.copyWith(color: Styles.kakiColor),),
+          Text(hotel['place'],style: Styles.headLineStyle2.copyWith(color: Styles.kakiColor),),
           const Gap(5),
-          Text("London",style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+          Text(hotel['destination'],style: Styles.headLineStyle3.copyWith(color: Colors.white),),
           const Gap(8),
-          Text("\$40/Night",style: Styles.headLineStyle.copyWith(color: Styles.kakiColor),)
+          Text('\$${hotel['place']}/night',style: Styles.headLineStyle.copyWith(color: Styles.kakiColor),)
         ],
       ),
     );
