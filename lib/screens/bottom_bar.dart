@@ -1,4 +1,6 @@
 import 'package:booktickets/screens/home_screen.dart';
+import 'package:booktickets/screens/search_screen.dart';
+import 'package:booktickets/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +16,15 @@ class _BottomBarState extends State<BottomBar> {
   int _selectedIndex=0;
   static final List<Widget> _widgetOptions =<Widget>[
    const Homescreen(),
-    const Text("Search"),
-    const Text("Tickets"),
+    const SearchScreen(),
+    const TicketScreen(),
     const Text("Profile")
   ];
 
    void _onItemTapped(int index){
+     setState(() {
      _selectedIndex=index;
+     });
    }
   @override
   Widget build(BuildContext context) {
@@ -56,3 +60,4 @@ class _BottomBarState extends State<BottomBar> {
     );
   }
 }
+
